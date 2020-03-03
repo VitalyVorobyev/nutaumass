@@ -1,0 +1,36 @@
+#
+#  Three-prong tau decays
+# e+e- -> [tau- -> (3h)- nu_tau] [tau+ -> X] (and c.c.)
+#
+# Author: V. Vorobyev (vvorob@inp.nsk.su)
+# December 2019
+#
+
+Alias Mytau- tau-
+Alias Mytau+ tau+
+ChargeConj Mytau- Mytau+
+
+ChargeConj nu_tau_1mev anti-nu_tau_1mev
+ChargeConj nu_tau_5mev anti-nu_tau_5mev
+ChargeConj nu_tau_10mev anti-nu_tau_10mev
+
+Decay vpho
+0.5 Mytau- tau+  VLL;
+0.5 tau- Mytau+  VLL;
+Enddecay
+
+Decay Mytau-
+0.0932 pi- pi- pi+ nu_tau_10mev PHOTOS PHSP;
+#0.0932 pi- pi- pi+ nu_tau_10mev TAUHADNU -0.108 0.775 0.149 1.364 0.400 1.23 0.4;
+#0.0034200 nu_tau_10mev K- pi+ pi- PYTHIA 21;
+#0.0014000 nu_tau_10mev K- pi- K+  PYTHIA 21;
+#0.0000158 nu_tau_10mev K- K+ K-   PYTHIA 21;
+#0.000034000 phi     pi-     nu_tau_10mev  PHSP;
+#0.000037000 phi     K-      nu_tau_10mev  PHSP;
+#0.000319939 nu_tau_10mev pi- anti-K0 PYTHIA 21;
+#0.001590000 nu_tau_10mev K- K0 PYTHIA 21;
+#0.001700000 nu_tau_10mev K0 pi- anti-K0 PYTHIA 21;
+Enddecay
+CDecay Mytau+
+
+End
