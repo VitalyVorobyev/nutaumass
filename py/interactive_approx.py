@@ -38,7 +38,7 @@ def approx(x, zero, a0, a1, pow, bias=0):
 
 def run():
     """ """
-    fname='xsec.png'
+    fname='../xsec.png'
 
     ithr = 0.395
     izero = 0.120
